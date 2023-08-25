@@ -25,7 +25,11 @@ const Movie = async () => {
             <div className="md:w-[70%] md:px-0 px-5 mx-auto grid md:grid-cols-4 grid-cols-1 gap-5 mt-10 mb-20" >
                 {
                     main_data.map((v) => {
-                        return <MovieCard key={v.id} {...v} />
+                        const { backgroundImage } = v.jawSummary;
+
+                        if(backgroundImage.url){
+                            return <MovieCard key={v.id} {...v} />
+                        }
                     })
                 }
             </div>

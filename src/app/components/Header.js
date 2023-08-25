@@ -1,6 +1,7 @@
 'use client';
 
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { useState } from "react";
 
 import { AiOutlineMenu, AiOutlineClose } from 'react-icons/ai';
@@ -9,11 +10,14 @@ const Header = () => {
 
     const [viewNav, setViewNav] = useState(false);
 
+    const router = usePathname();
+
+
     const list = <>
-        <li> <Link href={'/'} > Home</Link></li>
-        <li> <Link href={'/about'} > About</Link></li>
-        <li> <Link href={'/movie'} > Movie</Link></li>
-        <li> <Link href={'/contact'} > Contact Us</Link></li>
+        <li> <Link href={'/'} className={router === '/' ? 'text-red-600' : ''} > Home</Link></li>
+        <li> <Link href={'/about'} className={router === '/about' ? 'text-red-600' : ''} > About</Link></li>
+        <li> <Link href={'/movie'} className={router === '/movie' ? 'text-red-600' : ''} > Movie</Link></li>
+        <li> <Link href={'/contact'} className={router === '/contact' ? 'text-red-600' : ''} > Contact Us</Link></li>
     </>
 
 
@@ -44,7 +48,7 @@ const Header = () => {
                         viewNav &&
                         <ul className="fixed top-0 right-0 left-0 bottom-0 z-20 bg-white h-screen" >
                             <div className="absolute left-1/2 top-52 -translate-x-1/2 translate-y-1/2 text-xl text-center space-y-3 font-bold"
-                            onClick={()=>setViewNav(false)}
+                                onClick={() => setViewNav(false)}
                             >
                                 {list}
                             </div>
