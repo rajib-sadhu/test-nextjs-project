@@ -20,9 +20,9 @@ const Movie = async () => {
     const main_data = data.titles;
 
     return (
-        <div>
+        <div className="" >
             <h1 className="mt-10 text-center font-extrabold text-3xl uppercase">Movie Page</h1>
-            <div className="md:w-[70%] md:px-0 px-5 mx-auto grid md:grid-cols-4 grid-cols-1 gap-5 my-10" >
+            <div className="md:w-[70%] md:px-0 px-5 mx-auto grid md:grid-cols-4 grid-cols-1 gap-5 mt-10 mb-20" >
                 {
                     main_data.map((v) => {
                         return <MovieCard key={v.id} {...v} />

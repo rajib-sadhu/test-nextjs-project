@@ -6,10 +6,11 @@ const MovieCard = (v) => {
 
     const { id, type, title, synopsis, backgroundImage } = v.jawSummary;
 
+
     return (
         <div className="mx-auto mt-10 relative">
             <div>
-                <Image src={backgroundImage.url || 'https://climate.onep.go.th/wp-content/uploads/2020/01/default-image.jpg'} alt={title} width={250} height={200} className="object-cover h-[200px] w-full" />
+                <Image src={backgroundImage?.url || '/default.jpg'} alt={title} width={250} height={200} className="object-cover h-[200px] w-full" />
             </div>
             <div className="">
                 <h3 className="text-lg uppercase font-bold mt-1" >{title.substring(0, 18)}</h3>
