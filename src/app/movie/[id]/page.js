@@ -24,7 +24,7 @@ const MoviePage = async ({ params }) => {
             <div className="my-10" >
                 <h1 className="text-2xl uppercase" ><Link href={'/movie'} >Netflix</Link> / <span className="font-bold text-red-600">{main_data?.type}</span> </h1>
             </div>
-            <div className="grid md:grid-cols-2 grid-cols-1" >
+            <div className="grid md:grid-cols-2 grid-cols-1 gap-5" >
                 <div className="mx-auto" >
                     <Image src={main_data.backgroundImage.url || 'https://climate.onep.go.th/wp-content/uploads/2020/01/default-image.jpg' } alt={main_data.title} width={600} height={350} />
                 </div>
